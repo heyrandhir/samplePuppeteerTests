@@ -10,7 +10,7 @@ describe('my first test with jest-puppeteer', () => {
         page = await browser.newPage();
     });
     beforeEach(async () => {
-        await page.goto('http://localhost:5500');
+        await page.goto('http://localhost:8000');
     });
     afterAll(async () => {
         await browser.close();
