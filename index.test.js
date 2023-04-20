@@ -1,6 +1,19 @@
+const puppeteer = require('puppeteer');
 describe('my first test with jest-puppeteer', () => {
+    let page
+    beforeAll(async () => {
+        browser = await puppeteer.launch({
+            headless: true,
+            ignoreHTTPSErrors: true,
+            args: ['--incognito'],
+        });
+        page = await browser.newPage();
+    });
     beforeEach(async () => {
         await page.goto('http://localhost:5500');
+    });
+    afterAll(async () => {
+        await browser.close();
     });
     it('can count', async () => {
         // refer to the elements we need
