@@ -1,11 +1,11 @@
 name: Tests
 on:
-  push:
-    branches: [main]
   pull_request:
-    branches: [main]
+    branches: [main, develop]
 jobs:
-  steps:
-    - uses: actions/checkout@v2
-    - run: npm install
-    - run: npm test
+  Lint-Check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm test
