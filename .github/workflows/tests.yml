@@ -15,8 +15,8 @@ jobs:
       # add git to the container and set it up with the token
       - name: setup git in container
         uses: actions/checkout@v2
-          with:
-            token: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       # cache the dependencies from any node_modules directory
       - name: cache dependencies
         uses: actions/cache@v2
